@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+
+    <title>User</title>
+</head>
+<body>
+<h1>User</h1>
+<hr>
+<table border="3">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Password</th>
+        <th>Role</th>
+    </tr>
+    <tbody>
+    <tr th:each="user : ${user} ">
+        <td th:text="${user.getId()}">Id</td>
+        <td th:text="${user.getUsername()}">name</td>
+        <td th:text="${user.getAge()}">age</td>
+        <td th:text="${user.getPassword}">password</td>
+        <td th:text="${user.getRoles()}">Role</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<form th:action="@{/logout}" th:method="POST">
+    <input type="submit" value="Logout">
+</form>
+</body>
+</html>
